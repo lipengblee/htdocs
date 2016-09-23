@@ -11,6 +11,11 @@ use yii\widgets\DetailView;
         'product_name',
         'product_description',
         'contact',
+        'thumbnail'=>[
+            'attribute'=>'thumbnail',
+            'value'=>$model->thumbnail?$model->thumbnail:null,
+            'format'=>['image',['width'=>200]],
+        ],
         'begin_time'=>[
             'attribute'=>'begin_time',
             'format'=>['date','php:Y-m-d']

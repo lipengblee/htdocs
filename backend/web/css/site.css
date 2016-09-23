@@ -36,6 +36,7 @@ body {
     font-style: italic;
 }
 
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     position: relative;
@@ -109,3 +110,4 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+

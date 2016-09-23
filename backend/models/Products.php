@@ -16,9 +16,11 @@ use yii\behaviors\TimestampBehavior;
  * @property string $product_detail
  * @property integer $create_time
  * @property integer $update_time
+ * @property integer $thumbnail
  */
 class Products extends \yii\db\ActiveRecord
 {
+    public $imgFile;
     /**
      * @inheritdoc
      */
@@ -26,6 +28,8 @@ class Products extends \yii\db\ActiveRecord
     {
         return '{{%products}}';
     }
+
+
     public function behaviors()
     {
         return [
@@ -40,8 +44,8 @@ class Products extends \yii\db\ActiveRecord
         return [
             [['product_name', 'product_description', 'begin_time', 'end_time','contact'], 'required', 'message'=>'不能为空'],
             ['product_name','unique','message'=>'存在相同标题'],
-            [['product_description', 'product_detail'], 'string'],
-            [['begin_time','end_time'],'safe'],
+            [['product_description'], 'string'],
+            [['begin_time','end_time','thumbnail','product_detail'],'safe'],
             ['end_time','compare','compareAttribute'=>'begin_time','operator'=>'>','message'=>'结束时间必须大于开始时间'],
             [['product_name'], 'string', 'max' => 50,'message'=>'内容不得超过50字'],
             [['contact'], 'string', 'max' => 30],
@@ -57,6 +61,7 @@ class Products extends \yii\db\ActiveRecord
             'product_id' => '产品ID',
             'product_name' => '名称',
             'product_description' => '描述',
+            'thumbnail'=>'缩略图',
             'begin_time' => '开始时间',
             'end_time' => '结束时间',
             'product_detail' => '产品详情',

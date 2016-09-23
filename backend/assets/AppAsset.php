@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
         'assets/css/style-responsive.css',
     ];
     public $js = [
-        'assets/js/jquery-ui-1.9.2.custom.min.js',
+     /*   'assets/js/jquery-ui-1.9.2.custom.min.js',
         'assets/js/jquery-migrate-1.2.1.min.js',
         'assets/js/bootstrap.min.js',
         'assets/js/modernizr.min.js',
@@ -43,8 +43,7 @@ class AppAsset extends AssetBundle
         'assets/js/calendar/moment-2.2.1.js',
         'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
         'assets/js/scripts.js',
-        'assets/js/dashboard-chart-init.js'
-
+        'assets/js/dashboard-chart-init.js'*/
     ];
     public $depends = [
         'yii\web\YiiAsset',

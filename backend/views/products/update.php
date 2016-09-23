@@ -45,7 +45,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ]) ?>
             <!--缩略图-->
-            <?= $form->field($model, 'thumbnail')->fileInput([
+            <div class="form-group">
+                <div class="col-lg-offset-1 col-lg-3">
+                    <?= Html::img($model->thumbnail,[
+                        'alt'=>$model->thumbnail,
+                        'width'=>200,
+                    ])?>
+                </div>
+            </div>
+            <?= $form->field($model,'thumbnail')->fileInput([
                 'class' => 'file',
             ]) ?>
             <!--开始时间-->
@@ -79,7 +87,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
             <br>
             <div class="form-group">
-                <?= Html::submitButton('&nbsp;添&nbsp;加&nbsp;产&nbsp;品&nbsp;', ['class' => 'btn btn-primary col-lg-offset-4']) ?>
+
+                <?= Html::a('&nbsp;返&nbsp;&nbsp;回&nbsp;',Yii::$app->urlManager->createUrl('products/showproducts'), [
+                    'class' => 'btn btn-default col-lg-offset-4',
+                ]) ?>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <?= Html::submitButton('&nbsp;修&nbsp;改&nbsp;产&nbsp;品&nbsp;', ['class' => 'btn btn-primary']) ?>
+
             </div>
             <?php ActiveForm::end(); ?>
 
